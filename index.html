@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Encurtador de Links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+     <div class="bemvindo">
+                 <h1>Bem-vindo ao Encurtador de Links!</h1> <br>    
+                 <p>Espero que te ajude no seu dia a dia!</p>
+     </div>    
+
+    <main>
+        <h2>Coloque o link que deseja encurtar:</h2>
+        <form action="/" method="POST">
+            <input type="text" name="url" placeholder="Cola aqui o link grande..." required>
+            <button type="submit">Encurtar</button>
+        </form>
+
+        {% if link_curto %}
+        <p class="resultado">
+            Link curto: <a href="{{ link_curto }}" target="_blank">{{ link_curto }}</a>
+        </p>
+        {% endif %}
+    </main>
+    </body>
+</html>
